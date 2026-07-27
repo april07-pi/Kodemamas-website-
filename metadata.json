@@ -1,0 +1,6 @@
+{
+  "name": "KodeMamas",
+  "description": "An AI-powered, multilingual, offline-first coding education platform that equips township and rural mothers, girls, and underserved communities in South Africa with software engineering and digital skills.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
