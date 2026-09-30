@@ -26,11 +26,19 @@ export default function About() {
           {/* Why We Started / Lived Experience */}
           <div className="bg-[#191624]/40 rounded-3xl p-8 sm:p-10 border border-white/5 shadow-xl flex flex-col justify-between text-left">
             <div>
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="p-2.5 bg-[#09080c] text-[#D4AF37] rounded-xl border border-white/5 shadow-inner">
-                  <Compass className="w-5 h-5" />
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="p-2.5 bg-[#09080c] text-[#D4AF37] rounded-xl border border-white/5 shadow-inner">
+                    <Compass className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-display font-bold text-xl text-white">Why We Started</h3>
                 </div>
-                <h3 className="font-display font-bold text-xl text-white">Why We Started</h3>
+
+                {/* Founder Badge */}
+                <div className="flex items-center space-x-1.5 bg-purple-950/40 border border-purple-800/30 px-3 py-1 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-[#D4AF37]"></span>
+                  <span className="text-[11px] font-bold text-purple-200">Nokwazi Xaba</span>
+                </div>
               </div>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed space-y-4 font-normal">
                 Growing up in Bloemfontein, South Africa, our founder, Nokwazi Nobuhle Xaba, witnessed the profound disparity in digital access firsthand. While studying technology, she watched as brilliant classmates were locked out of tech careers simply because they couldn't afford continuous R80/GB mobile data to stream online classes, or struggled to comprehend complex technical jargon taught exclusively in English.

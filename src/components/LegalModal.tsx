@@ -150,7 +150,7 @@ export default function LegalModal({ isOpen, onClose, initialTab = "privacy" }: 
 
                 <h5 className="font-bold text-white mt-4">2. Your Right to Access and Deletion</h5>
                 <p>
-                  In accordance with POPIA guidelines, all platform visitors and partners retain the right to query what information we have stored, correct inaccurate fields, or request immediate, permanent deletion of their contact records. To initiate a POPIA inquiry, please email us directly at <span className="text-white underline">kodemamas@gmail.com</span>.
+                  In accordance with POPIA guidelines, all platform visitors and partners retain the right to query what information we have stored, correct inaccurate fields, or request immediate, permanent deletion of their contact records. To initiate a POPIA inquiry, please email us directly at <a href="mailto:Kodemamas@gmail.com" className="text-[#D4AF37] underline font-bold hover:text-amber-300">Kodemamas@gmail.com</a>.
                 </p>
               </div>
             )}

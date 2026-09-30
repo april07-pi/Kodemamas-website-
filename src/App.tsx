@@ -23,15 +23,13 @@ import Contact from "./components/Contact";
 import CMSAdmin from "./components/CMSAdmin";
 import Footer from "./components/Footer";
 import LegalModal from "./components/LegalModal";
-import MarketingVideoModal from "./components/MarketingVideoModal";
 import { CmsContent } from "./types";
-import { Cpu, Terminal, Sparkles, MessageSquare, ShieldCheck, Database, Award, Video } from "lucide-react";
+import { Cpu, Terminal, Sparkles, MessageSquare, ShieldCheck, Database, Award } from "lucide-react";
 
 export default function App() {
   const [cmsActive, setCmsActive] = useState(false);
   const [pledgeMessage, setPledgeMessage] = useState("");
   const [legalModalOpen, setLegalModalOpen] = useState(false);
-  const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [legalTab, setLegalTab] = useState<"privacy" | "terms" | "popia" | "cookie">("privacy");
   const [cmsContent, setCmsContent] = useState<CmsContent>({
     hero: {
@@ -252,26 +250,6 @@ export default function App() {
         onClose={() => setLegalModalOpen(false)} 
         initialTab={legalTab} 
       />
-
-      {/* Interactive Portfolio Marketing Video Generator Modal */}
-      <MarketingVideoModal 
-        isOpen={videoModalOpen} 
-        onClose={() => setVideoModalOpen(false)} 
-        userEmail="xabanokwazi008@gmail.com"
-      />
-
-      {/* Floating Marketing Video Studio Button */}
-      <div className="fixed bottom-6 left-6 z-40">
-        <button
-          onClick={() => setVideoModalOpen(true)}
-          className="flex items-center space-x-2 px-4 py-3 rounded-full bg-[#D4AF37] hover:bg-[#F3C63F] text-gray-950 text-xs font-bold shadow-2xl transition-all transform hover:scale-105 active:scale-95 border border-white/20 cursor-pointer animate-bounce"
-          style={{ animationDuration: '3s' }}
-          title="Video Studio: Generate Portfolio Video"
-        >
-          <Video className="w-4 h-4 text-gray-950 shrink-0" />
-          <span>Marketing Video Studio</span>
-        </button>
-      </div>
 
     </div>
   );

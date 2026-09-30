@@ -98,6 +98,12 @@ function getGeminiClient() {
   return aiClient;
 }
 
+// Google Search Console Verification Route
+app.get("/googlebd90fa181cc45567.html", (req, res) => {
+  res.setHeader("Content-Type", "text/html");
+  res.send("google-site-verification: googlebd90fa181cc45567.html");
+});
+
 // API: Get current CMS content
 app.get("/api/cms/content", (req, res) => {
   res.json(cmsContent);
@@ -128,17 +134,20 @@ app.post("/api/contact", (req, res) => {
     if (!name || !email || !type || !message) {
       return res.status(400).json({ error: "All fields are required" });
     }
+    const targetEmail = "Kodemamas@gmail.com";
     const newSubmission = {
       id: `sub_${Date.now()}`,
       name,
       email,
       type,
       message,
+      targetEmail,
       date: new Date().toISOString()
     };
     submissions.unshift(newSubmission);
     cmsContent.visitorCount += 1;
-    res.json({ success: true, submission: newSubmission });
+    console.log(`[Enquiry Received] Saved and routed to ${targetEmail} from ${name} (${email}): ${type}`);
+    res.json({ success: true, submission: newSubmission, recipient: targetEmail });
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }

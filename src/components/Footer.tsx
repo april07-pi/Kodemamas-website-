@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Terminal, Mail, Phone, MapPin, Heart, Send, Check } from "lucide-react";
+import { Terminal, Mail, Phone, MapPin, Heart, Send, Check, Linkedin } from "lucide-react";
 
 interface FooterProps {
   onSectionClick: (id: string) => void;
@@ -111,12 +111,29 @@ export default function Footer({ onSectionClick, onCmsClick, onLegalClick }: Foo
                 </div>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail className="w-4 h-4 text-slate-500" />
-                <span className="text-xs text-slate-300 font-normal">kodemamas@gmail.com</span>
+                <Mail className="w-4 h-4 text-[#D4AF37]" />
+                <a
+                  href="mailto:Kodemamas@gmail.com"
+                  className="text-xs text-slate-300 hover:text-[#D4AF37] hover:underline font-medium transition-colors"
+                >
+                  Kodemamas@gmail.com
+                </a>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-slate-500" />
                 <span className="text-xs text-slate-300 font-normal">+27 (0)72 539 4371</span>
+              </li>
+              <li className="flex items-center space-x-3 pt-1">
+                <Linkedin className="w-4 h-4 text-[#D4AF37] shrink-0" />
+                <a
+                  href="https://www.linkedin.com/in/nokwazi-nobuhle-xaba-645998306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  referrerPolicy="no-referrer"
+                  className="text-xs text-[#D4AF37] hover:underline font-semibold"
+                >
+                  Nokwazi Nobuhle Xaba (LinkedIn)
+                </a>
               </li>
             </ul>
           </div>

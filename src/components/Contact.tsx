@@ -35,13 +35,19 @@ export default function Contact({ onSuccessSubmit, prefilledMessage }: ContactPr
     setErr("");
     setLoading(true);
 
+    const mailtoSubject = encodeURIComponent(`[KodeMamas Enquiry] ${type} from ${name}`);
+    const mailtoBody = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nInquiry Category: ${type}\n\nMessage:\n${message}\n\n---\nSent via KodeMamas Platform`
+    );
+    const mailtoUrl = `mailto:Kodemamas@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ name, email, type, message })
+        body: JSON.stringify({ name, email, type, message, targetEmail: "Kodemamas@gmail.com" })
       });
 
       if (!response.ok) {
@@ -49,6 +55,14 @@ export default function Contact({ onSuccessSubmit, prefilledMessage }: ContactPr
       }
 
       setSuccess(true);
+      
+      // Attempt to trigger mail client for direct email delivery
+      try {
+        window.location.href = mailtoUrl;
+      } catch (e) {
+        console.log("Could not auto-open mailto:", e);
+      }
+
       setName("");
       setEmail("");
       setMessage("");
@@ -59,9 +73,9 @@ export default function Contact({ onSuccessSubmit, prefilledMessage }: ContactPr
 
       setTimeout(() => {
         setSuccess(false);
-      }, 6000);
+      }, 8000);
     } catch (error) {
-      setErr("Trouble establishing connection with our local router. Try again!");
+      setErr("Trouble establishing connection with our server. You can also email us directly at Kodemamas@gmail.com");
     } finally {
       setLoading(false);
     }
@@ -101,10 +115,16 @@ export default function Contact({ onSuccessSubmit, prefilledMessage }: ContactPr
                 </div>
               </div>
               <div className="flex items-start space-x-3.5">
-                <Phone className="w-5 h-5 text-purple-400 shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-white">Platform Inquiries</h4>
-                  <p className="text-xs text-slate-400 font-normal mt-0.5">kodemamas@gmail.com • +27 (0)72 539 4371</p>
+                  <h4 className="font-bold text-white">Direct Email Enquiries</h4>
+                  <a
+                    href="mailto:Kodemamas@gmail.com"
+                    className="text-xs text-[#D4AF37] hover:underline font-semibold block mt-0.5"
+                  >
+                    Kodemamas@gmail.com
+                  </a>
+                  <p className="text-xs text-slate-400 font-normal mt-0.5">+27 (0)72 539 4371</p>
                 </div>
               </div>
             </div>
@@ -117,11 +137,18 @@ export default function Contact({ onSuccessSubmit, prefilledMessage }: ContactPr
               <div className="py-12 flex flex-col items-center text-center space-y-4">
                 <CheckCircle2 className="w-16 h-16 text-emerald-400 animate-bounce" />
                 <h3 className="font-display font-bold text-xl text-white">
-                  Proposal Submitted Successfully!
+                  Enquiry Prepared for Kodemamas@gmail.com!
                 </h3>
                 <p className="text-slate-300 text-xs sm:text-sm max-w-md leading-relaxed font-normal">
-                  We have registered your inquiry on our server. Our Bloemfontein-based team will analyze your proposal and reply within 24 working hours. Thank you for your support!
+                  Your message has been saved to our inquiry system and routed to <strong className="text-white">Kodemamas@gmail.com</strong>.
                 </p>
+                <a
+                  href={`mailto:Kodemamas@gmail.com?subject=${encodeURIComponent("[KodeMamas Enquiry]")}`}
+                  className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-purple-900/60 hover:bg-purple-800/80 text-white text-xs font-bold transition-all border border-purple-500/30 shadow-md mt-2"
+                >
+                  <Mail className="w-4 h-4 text-[#D4AF37]" />
+                  <span>Email Kodemamas@gmail.com Directly</span>
+                </a>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
