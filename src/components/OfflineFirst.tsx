@@ -1,5 +1,5 @@
 import React from "react";
-import { WifiOff, Database, RotateCw, Smartphone, CheckCircle, HelpCircle, HardDrive } from "lucide-react";
+import { WifiOff, Database, RotateCw, Smartphone, CheckCircle, HelpCircle, HardDrive, ArrowUpRight } from "lucide-react";
 
 export default function OfflineFirst() {
   const offlineSteps = [
@@ -72,13 +72,43 @@ export default function OfflineFirst() {
 
               <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-500">
                 <span className="font-mono">Mechanism #{idx + 1}</span>
-                <span className="text-purple-400 font-semibold flex items-center gap-1">
-                  Active in APK
+                <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                  Live on Google Play
                   <CheckCircle className="w-3 h-3 text-emerald-400" />
                 </span>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Google Play Store Banner */}
+        <div className="mb-12 bg-gradient-to-r from-emerald-950/40 via-[#191624] to-emerald-950/30 border border-emerald-500/30 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+          <div className="space-y-2 text-left">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wider">
+              <span>Android Release Now Live</span>
+            </div>
+            <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
+              Install KodeMamas from Google Play Store
+            </h3>
+            <p className="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed font-normal">
+              Experience the offline-first coding curriculum directly on your Android phone or tablet. All lessons, practice playgrounds, and language definitions sync automatically through Google Play without manual APK downloads.
+            </p>
+          </div>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.aistudio.kodemamas.hftxyz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs tracking-wide shadow-lg shadow-emerald-950/50 transition-all hover:scale-105 shrink-0 group border border-emerald-400/30 cursor-pointer"
+          >
+            <svg className="w-5 h-5 fill-current text-white shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.792 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.242 11.245l2.257 2.257-11.83 6.772 9.573-9.029zm0-2.118L5.278 1.914l11.83 6.772-2.257 2.256zm1.092 1.059l4.57 2.618a1.365 1.365 0 0 0 0-2.366l-4.57-2.618-1.42 1.42 1.42 1.42z" />
+            </svg>
+            <div className="text-left leading-tight">
+              <span className="block text-[9px] uppercase font-mono text-emerald-200">Download on</span>
+              <span className="block text-sm font-extrabold text-white">Google Play</span>
+            </div>
+            <ArrowUpRight className="w-4 h-4 text-emerald-300 ml-1" />
+          </a>
         </div>
 
         {/* Sync Status Banner Simulation */}

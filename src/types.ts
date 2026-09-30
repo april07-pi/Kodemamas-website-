@@ -6,6 +6,7 @@ export interface BlogArticle {
   readTime: string;
   date: string;
   excerpt: string;
+  link?: string;
 }
 
 export interface Stats {

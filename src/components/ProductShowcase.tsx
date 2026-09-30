@@ -38,6 +38,7 @@ export default function ProductShowcase() {
     {
       category: "Mobile Target App",
       items: [
+        { name: "Google Play Store", desc: "Live official release (App ID: com.aistudio.kodemamas.hftxyz) with continuous updates." },
         { name: "Android Platform", desc: "Optimized for Android 10+ (dominating 90%+ of the local market)." },
         { name: "Kotlin & Jetpack Compose", desc: "Powers the native Android application shell." }
       ],
@@ -113,10 +114,10 @@ export default function ProductShowcase() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center animate-fade-in">
               <div className="space-y-6">
                 <h3 className="font-display font-extrabold text-2xl text-white">
-                  Visual Prototype Demonstration
+                  Android App & Interface Demonstration
                 </h3>
                 <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-normal">
-                  These visual mockups illustrate our core target mobile client design. We optimize for low-tier Android hardware, delivering ultra-light offline-ready interactive lessons where mothers and children learn together.
+                  These visual layouts illustrate our official Android app interface. We optimize for low-tier Android hardware, delivering ultra-light offline-ready interactive lessons where mothers and children learn together.
                 </p>
                 <div className="p-4 rounded-xl bg-purple-950/20 border border-purple-800/30 text-xs text-purple-200">
                   <p className="font-bold flex items-center gap-1.5 text-[#D4AF37] mb-1">
@@ -124,6 +125,21 @@ export default function ProductShowcase() {
                     Offline-Ready Interface Design
                   </p>
                   No video streaming or heavy graphics. Lessons rely purely on localized textual analogies, simple interactive components, and offline-stored syntax files to minimize data.
+                </div>
+
+                {/* Google Play Store Quick Action */}
+                <div>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.aistudio.kodemamas.hftxyz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2.5 px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs tracking-wide shadow-lg shadow-emerald-950/40 border border-emerald-400/30 transition-all hover:scale-105"
+                  >
+                    <svg className="w-4 h-4 fill-current text-white shrink-0" viewBox="0 0 24 24">
+                      <path d="M3.609 1.814L13.792 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.242 11.245l2.257 2.257-11.83 6.772 9.573-9.029zm0-2.118L5.278 1.914l11.83 6.772-2.257 2.256zm1.092 1.059l4.57 2.618a1.365 1.365 0 0 0 0-2.366l-4.57-2.618-1.42 1.42 1.42 1.42z" />
+                    </svg>
+                    <span>Get on Google Play Store</span>
+                  </a>
                 </div>
               </div>
 

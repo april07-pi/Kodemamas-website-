@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, ArrowUpRight, Play, Users, Smartphone, Globe } from "lucide-react";
+import { Sparkles, ArrowUpRight, Play, Users, Smartphone, Globe, CheckCircle } from "lucide-react";
 
 interface HeroProps {
   title: string;
@@ -44,26 +44,43 @@ export default function Hero({ title, subtitle, onCtaClick, onTutorClick }: Hero
           </p>
 
           {/* Interactive CTAs */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
+            {/* Direct Google Play Store Button */}
+            <a
+              href="https://play.google.com/store/apps/details?id=com.aistudio.kodemamas.hftxyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="hero-google-play-btn"
+              className="flex items-center justify-center space-x-3 px-6 py-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm tracking-wide shadow-xl shadow-emerald-950/60 hover:shadow-emerald-500/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer border border-emerald-400/30 group"
+            >
+              <svg className="w-5 h-5 fill-current text-white shrink-0 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                <path d="M3.609 1.814L13.792 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.242 11.245l2.257 2.257-11.83 6.772 9.573-9.029zm0-2.118L5.278 1.914l11.83 6.772-2.257 2.256zm1.092 1.059l4.57 2.618a1.365 1.365 0 0 0 0-2.366l-4.57-2.618-1.42 1.42 1.42 1.42z" />
+              </svg>
+              <div className="text-left leading-tight">
+                <span className="block text-[10px] uppercase font-mono tracking-wider text-emerald-200">Get it on</span>
+                <span className="block text-sm font-extrabold text-white">Google Play Store</span>
+              </div>
+            </a>
+
             <button
               onClick={onTutorClick}
-              className="flex items-center justify-center space-x-2 px-7 py-4 rounded-xl bg-gradient-to-r from-[#4B0082] to-[#7c3aed] hover:brightness-110 text-white font-bold text-sm tracking-wide shadow-lg shadow-purple-950/50 hover:shadow-purple-500/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer border border-purple-500/20"
+              className="flex items-center justify-center space-x-2 px-6 py-4 rounded-xl bg-gradient-to-r from-[#4B0082] to-[#7c3aed] hover:brightness-110 text-white font-bold text-sm tracking-wide shadow-lg shadow-purple-950/50 hover:shadow-purple-500/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer border border-purple-500/20"
             >
               <Play className="w-4 h-4 text-[#D4AF37] fill-[#D4AF37]" />
               <span>Start Learning</span>
             </button>
             <button
               onClick={() => onCtaClick("contact")}
-              className="flex items-center justify-center space-x-2 px-7 py-4 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 font-bold text-sm tracking-wide shadow-sm hover:shadow transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              className="flex items-center justify-center space-x-2 px-5 py-4 rounded-xl bg-white/5 hover:bg-white/10 text-white border border-white/10 font-bold text-sm tracking-wide shadow-sm hover:shadow transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
             >
-              <span>Become a Beta Tester</span>
+              <span>Beta & Pilots</span>
               <Sparkles className="w-4 h-4 text-[#D4AF37]" />
             </button>
             <button
               onClick={() => onCtaClick("partnerships")}
-              className="flex items-center justify-center space-x-2 px-6 py-4 rounded-xl text-slate-300 hover:text-[#D4AF37] font-semibold text-sm transition-colors cursor-pointer"
+              className="flex items-center justify-center space-x-2 px-4 py-4 rounded-xl text-slate-300 hover:text-[#D4AF37] font-semibold text-sm transition-colors cursor-pointer"
             >
-              <span>Partner With Us</span>
+              <span>Partner</span>
               <ArrowUpRight className="w-4 h-4 text-[#D4AF37]" />
             </button>
           </div>
@@ -74,13 +91,23 @@ export default function Hero({ title, subtitle, onCtaClick, onTutorClick }: Hero
               Current Development Status
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex items-start space-x-2.5 text-slate-300 font-sans text-xs">
-                <Globe className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-bold text-white">Google Play Internal Testing</p>
-                  <p className="text-[11px] text-slate-400">Our native Android application build has entered internal testing stages.</p>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.aistudio.kodemamas.hftxyz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start space-x-2.5 text-slate-300 font-sans text-xs hover:text-white transition-colors group cursor-pointer p-2.5 -m-2.5 rounded-xl hover:bg-white/5"
+              >
+                <div className="p-1.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 group-hover:scale-110 transition-transform shrink-0 mt-0.5">
+                  <CheckCircle className="w-3.5 h-3.5" />
                 </div>
-              </div>
+                <div>
+                  <div className="flex items-center space-x-1.5">
+                    <p className="font-bold text-white group-hover:text-emerald-400 transition-colors">Published on Google Play</p>
+                    <ArrowUpRight className="w-3 h-3 text-emerald-400 opacity-75 group-hover:opacity-100" />
+                  </div>
+                  <p className="text-[11px] text-slate-400">Official Android app is live. Continuous updates sync automatically.</p>
+                </div>
+              </a>
               <div className="flex items-start space-x-2.5 text-slate-300 font-sans text-xs">
                 <Smartphone className="w-4 h-4 text-[#7c3aed] shrink-0 mt-0.5" />
                 <div>
@@ -146,9 +173,16 @@ export default function Hero({ title, subtitle, onCtaClick, onTutorClick }: Hero
                     MULTILINGUAL
                   </div>
                 </div>
-                <span className="text-[10px] font-mono text-slate-500">
-                  Internal Testing Prototype v0.9
-                </span>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.aistudio.kodemamas.hftxyz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-mono text-emerald-400 hover:text-emerald-300 flex items-center gap-1 transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span>Live on Google Play</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
               </div>
             </div>
 

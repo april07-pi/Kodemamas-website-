@@ -48,6 +48,16 @@ export default function App() {
     },
     blog: [
       {
+        id: "play-store-launch",
+        title: "Official Google Play Launch: KodeMamas Android App is Live",
+        author: "Nokwazi Nobuhle Xaba",
+        category: "Store Release",
+        readTime: "3 min read",
+        date: "September 30, 2026",
+        excerpt: "KodeMamas is officially published on Google Play Store! Android users can now install the application directly with seamless automatic updates.",
+        link: "https://play.google.com/store/apps/details?id=com.aistudio.kodemamas.hftxyz",
+      },
+      {
         id: "1",
         title: "Breaking Barriers: Bringing Coding to South African Townships Offline",
         author: "Nokwazi Nobuhle Xaba",

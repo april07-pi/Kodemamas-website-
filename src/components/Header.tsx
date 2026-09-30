@@ -101,7 +101,23 @@ export default function Header({ onSectionClick, onTutorClick, onCmsClick, cmsAc
         </nav>
 
         {/* Dynamic CMS & Tutor Triggers */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2 sm:space-x-3">
+          {/* Google Play Store Direct Link */}
+          <a
+            href="https://play.google.com/store/apps/details?id=com.aistudio.kodemamas.hftxyz"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="google-play-header-btn"
+            className="flex items-center space-x-1.5 px-3 py-2 rounded-xl bg-emerald-950/50 hover:bg-emerald-900/60 text-emerald-300 hover:text-white border border-emerald-500/30 text-xs font-semibold tracking-wide transition-all shadow-sm group"
+            title="Download on Google Play Store"
+          >
+            <svg className="w-3.5 h-3.5 fill-current text-emerald-400 group-hover:scale-110 transition-transform shrink-0" viewBox="0 0 24 24">
+              <path d="M3.609 1.814L13.792 12 3.61 22.186a2.036 2.036 0 0 1-.22-.964V2.778c0-.36.08-.692.22-.964zm11.242 11.245l2.257 2.257-11.83 6.772 9.573-9.029zm0-2.118L5.278 1.914l11.83 6.772-2.257 2.256zm1.092 1.059l4.57 2.618a1.365 1.365 0 0 0 0-2.366l-4.57-2.618-1.42 1.42 1.42 1.42z" />
+            </svg>
+            <span className="hidden sm:inline">Google Play</span>
+            <span className="sm:hidden">App</span>
+          </a>
+
           {/* Headless CMS Portal Toggle */}
           <button
             onClick={onCmsClick}

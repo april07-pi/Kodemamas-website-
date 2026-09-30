@@ -67,13 +67,26 @@ export default function News({ articles, onArticleClick }: NewsProps) {
                   </div>
                 </div>
 
-                <button
-                  onClick={() => onArticleClick?.(item.id)}
-                  className="p-1.5 rounded-lg hover:bg-purple-950/40 text-purple-300 hover:text-[#D4AF37] transition-all cursor-pointer border border-transparent hover:border-white/5"
-                  title="Read Briefing"
-                >
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                {item.link ? (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 text-emerald-300 hover:text-white transition-all text-xs font-semibold border border-emerald-500/30 cursor-pointer"
+                    title="View on Google Play Store"
+                  >
+                    <span>Google Play</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => onArticleClick?.(item.id)}
+                    className="p-1.5 rounded-lg hover:bg-purple-950/40 text-purple-300 hover:text-[#D4AF37] transition-all cursor-pointer border border-transparent hover:border-white/5"
+                    title="Read Briefing"
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                )}
               </div>
             </div>
           ))}
